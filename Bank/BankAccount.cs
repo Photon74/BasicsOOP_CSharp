@@ -39,12 +39,20 @@ namespace Bank
         public decimal AccountBalance { get => _accountBalance; set => _accountBalance = value; }
         internal AccountType AccountType { get => _accountType; set => _accountType = value; }
 
+        /// <summary>
+        /// Пополнение баланса
+        /// </summary>
+        /// <param name="amount">Сумма пополнения</param>
         public void Deposit(decimal amount)
         {
             if (amount <= 0) return;
             AccountBalance += amount;
         }
 
+        /// <summary>
+        /// Списание с баланса
+        /// </summary>
+        /// <param name="amount">Сумма списания</param>
         public void Withdraw(decimal amount)
         {
             if (amount > AccountBalance) return;
