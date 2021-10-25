@@ -11,49 +11,53 @@ namespace Bank
 
         public BankAccount()
         {
-            SetAccountNumber();
-            _accountBalance = 0;
-            _accountType = AccountType.Deposit;
+            AccountNumber = ++Number;
+            AccountBalance = 0;
+            AccountType = AccountType.Deposit;
         }
 
         public BankAccount(decimal accountBalance)
         {
-            SetAccountNumber();
-            _accountBalance = accountBalance;
+            AccountNumber = ++Number;
+            AccountBalance = accountBalance;
         }
 
         public BankAccount(AccountType accountType)
         {
-            SetAccountNumber();
-            _accountType = accountType;
+            AccountNumber = ++Number;
+            AccountType = accountType;
         }
 
         public BankAccount(decimal accountBalance, AccountType accountType)
         {
-            SetAccountNumber();
-            _accountBalance = accountBalance;
-            _accountType = accountType;
+            AccountNumber = ++Number;
+            AccountBalance = accountBalance;
+            AccountType = accountType;
         }
 
-        private void SetAccountNumber()
-        {
-            Number++;
-            _accountNumber = Number;
-        }
+        public double AccountNumber { get => _accountNumber; set => _accountNumber = value; }
+        public decimal AccountBalance { get => _accountBalance; set => _accountBalance = value; }
+        internal AccountType AccountType { get => _accountType; set => _accountType = value; }
 
-        public double GetAccountNumber()
-        {
-            return _accountNumber;
-        }
+        //private void SetAccountNumber()
+        //{
+        //    Number++;
+        //    _accountNumber = Number;
+        //}
 
-        public decimal GetAccountBalance()
-        {
-            return _accountBalance;
-        }
+        //public double GetAccountNumber()
+        //{
+        //    return _accountNumber;
+        //}
 
-        public AccountType GetAccountType()
-        {
-            return _accountType;
-        }
+        //public decimal GetAccountBalance()
+        //{
+        //    return _accountBalance;
+        //}
+
+        //public AccountType GetAccountType()
+        //{
+        //    return _accountType;
+        //}
     }
 }

@@ -14,34 +14,28 @@ namespace Bank
 
             Console.OutputEncoding = Encoding.UTF8; // Иначе вопросики выводил вместо знака рубля.
             Console.WriteLine(
-                $"Номер счета: {bankAccount.GetAccountNumber()}\n" +
-                $"Баланс счета: {bankAccount.GetAccountBalance():C}\n" +
-                $"Тип счета: {bankAccount.GetAccountType()}\n"
+                $"Номер счета: {bankAccount.AccountNumber}\n" +
+                $"Баланс счета: {bankAccount.AccountBalance:C}\n" +
+                $"Тип счета: {bankAccount.AccountType}\n"
                 );
 
             Console.WriteLine(
-                $"Номер счета: {bankAccount1.GetAccountNumber()}\n" +
-                $"Баланс счета: {bankAccount1.GetAccountBalance():C}\n" +
-                $"Тип счета: {bankAccount1.GetAccountType()}\n"
+                $"Номер счета: {bankAccount1.AccountNumber}\n" +
+                $"Баланс счета: {bankAccount1.AccountBalance:C}\n" +
+                $"Тип счета: {bankAccount1.AccountType}\n"
                 );
 
             Console.WriteLine(
-                $"Номер счета: {bankAccount2.GetAccountNumber()}\n" +
-                $"Баланс счета: {bankAccount2.GetAccountBalance():C}\n" +
-                $"Тип счета: {bankAccount2.GetAccountType()}\n"
+                $"Номер счета: {bankAccount2.AccountNumber}\n" +
+                $"Баланс счета: {bankAccount2.AccountBalance:C}\n" +
+                $"Тип счета: {bankAccount2.AccountType}\n"
                 );
 
             Console.WriteLine(
-                $"Номер счета: {bankAccount3.GetAccountNumber()}\n" +
-                $"Баланс счета: {bankAccount3.GetAccountBalance():C}\n" +
-                $"Тип счета: {bankAccount3.GetAccountType()}\n"
+                $"Номер счета: {bankAccount3.AccountNumber}\n" +
+                $"Баланс счета: {bankAccount3.AccountBalance:C}\n" +
+                $"Тип счета: {bankAccount3.AccountType}\n"
                 );
-
-            //Console.WriteLine(
-            //    $"Номер счета: {bankAccount4.GetAccountNumber()}\n" +
-            //    $"Баланс счета: {bankAccount4.GetAccountBalance()}\n" +
-            //    $"Тип счета: {bankAccount4.GetAccountType()}"
-            //    );
         }
     }
 }
