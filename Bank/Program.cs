@@ -8,7 +8,6 @@ namespace Bank
         {
             BankAccount bankAccount = new();
 
-            bankAccount.SetAccountNumber(123);
             bankAccount.SetAccountBalance(500);
             bankAccount.SetAccountType(AccountType.Deposit);
 

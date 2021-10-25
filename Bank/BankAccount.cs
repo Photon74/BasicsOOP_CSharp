@@ -2,18 +2,19 @@
 {
     class BankAccount
     {
-        private double _accountNumber;
+        //private double _accountNumber;
+        private static double _accountNumber;
         private decimal _accountBalance;
         private AccountType _accountType;
 
-        public void SetAccountNumber(double number)
-        {
-            _accountNumber = number;
-        }
+        //public void SetAccountNumber(double number)
+        //{
+        //    _accountNumber = number;
+        //}
 
         public double GetAccountNumber()
         {
-            return _accountNumber;
+            return ++_accountNumber;
         }
 
         public void SetAccountBalance(decimal balance)
