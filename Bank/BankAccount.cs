@@ -1,35 +1,54 @@
-﻿namespace Bank
+﻿using System;
+
+namespace Bank
 {
     class BankAccount
     {
-        //private double _accountNumber;
-        private static double _accountNumber;
+        private static double Number;
+        private double _accountNumber;
         private decimal _accountBalance;
         private AccountType _accountType;
 
-        //public void SetAccountNumber(double number)
-        //{
-        //    _accountNumber = number;
-        //}
+        public BankAccount()
+        {
+            SetAccountNumber();
+            _accountBalance = 0;
+            _accountType = AccountType.Deposit;
+        }
+
+        public BankAccount(decimal accountBalance)
+        {
+            SetAccountNumber();
+            _accountBalance = accountBalance;
+        }
+
+        public BankAccount(AccountType accountType)
+        {
+            SetAccountNumber();
+            _accountType = accountType;
+        }
+
+        public BankAccount(decimal accountBalance, AccountType accountType)
+        {
+            SetAccountNumber();
+            _accountBalance = accountBalance;
+            _accountType = accountType;
+        }
+
+        private void SetAccountNumber()
+        {
+            Number++;
+            _accountNumber = Number;
+        }
 
         public double GetAccountNumber()
         {
-            return ++_accountNumber;
-        }
-
-        public void SetAccountBalance(decimal balance)
-        {
-            _accountBalance = balance;
+            return _accountNumber;
         }
 
         public decimal GetAccountBalance()
         {
             return _accountBalance;
-        }
-
-        public void SetAccountType(AccountType accountType)
-        {
-            _accountType = accountType;
         }
 
         public AccountType GetAccountType()
