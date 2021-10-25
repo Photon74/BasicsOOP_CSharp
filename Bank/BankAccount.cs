@@ -39,25 +39,16 @@ namespace Bank
         public decimal AccountBalance { get => _accountBalance; set => _accountBalance = value; }
         internal AccountType AccountType { get => _accountType; set => _accountType = value; }
 
-        //private void SetAccountNumber()
-        //{
-        //    Number++;
-        //    _accountNumber = Number;
-        //}
+        public void Deposit(decimal amount)
+        {
+            if (amount <= 0) return;
+            AccountBalance += amount;
+        }
 
-        //public double GetAccountNumber()
-        //{
-        //    return _accountNumber;
-        //}
-
-        //public decimal GetAccountBalance()
-        //{
-        //    return _accountBalance;
-        //}
-
-        //public AccountType GetAccountType()
-        //{
-        //    return _accountType;
-        //}
+        public void Withdraw(decimal amount)
+        {
+            if (amount > AccountBalance) return;
+            AccountBalance -= amount;
+        }
     }
 }
