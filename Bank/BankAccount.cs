@@ -5,27 +5,17 @@
     {
         public event AccountHandler Notify;
         private static double Number;
-        private double _accountNumber;
-        private decimal _accountBalance;
-        private AccountType _accountType;
 
         public BankAccount()
         {
             AccountNumber = ++Number;
             AccountBalance = 0;
             AccountType = AccountType.Deposit;
-
         }
 
-        public BankAccount(decimal accountBalance) : this()
-        {
-            AccountBalance = accountBalance;
-        }
+        public BankAccount(decimal accountBalance) : this() => AccountBalance = accountBalance;
 
-        public BankAccount(AccountType accountType) : this()
-        {
-            AccountType = accountType;
-        }
+        public BankAccount(AccountType accountType) : this() => AccountType = accountType;
 
         public BankAccount(decimal accountBalance, AccountType accountType) : this()
         {
@@ -33,9 +23,9 @@
             AccountType = accountType;
         }
 
-        public double AccountNumber { get => _accountNumber; set => _accountNumber = value; }
-        public decimal AccountBalance { get => _accountBalance; set => _accountBalance = value; }
-        internal AccountType AccountType { get => _accountType; set => _accountType = value; }
+        public double AccountNumber { get; set; }
+        public decimal AccountBalance { get; set; }
+        internal AccountType AccountType { get; set; }
 
         /// <summary>
         /// Пополнение баланса
