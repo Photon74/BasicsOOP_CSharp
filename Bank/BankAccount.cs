@@ -62,5 +62,12 @@
             AccountBalance -= amount;
             Notify?.Invoke($"Со счета № {AccountNumber} снято: {amount:C2}\nОстаток: {AccountBalance:C2}.\n");
         }
+
+        public override string ToString()
+        {
+            return $"Номер счета: {AccountNumber}\n" +
+                $"Баланс счета: {AccountBalance:C}\n" +
+                $"Тип счета: {AccountType}\n";
+        }
     }
 }
