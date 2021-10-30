@@ -10,8 +10,6 @@ namespace Bank
             Console.OutputEncoding = Encoding.UTF8; // Иначе вопросики выводил вместо знака рубля.
 
             BankAccount bankAccount = new();
-            bankAccount.Notify += message => Console.WriteLine(message);
-
             BankAccount bankAccount1 = new(accountBalance: 500);
             BankAccount bankAccount2 = new(accountType: AccountType.Credit);
             BankAccount bankAccount3 = new(accountBalance: 358, accountType: AccountType.Deposit);
