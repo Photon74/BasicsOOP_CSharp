@@ -2,10 +2,8 @@
 
 namespace Bank
 {
-    public delegate void AccountHandler(string message);
     class BankAccount
     {
-        public event AccountHandler Notify;
         private static double Number;
 
         public BankAccount()
@@ -35,15 +33,9 @@ namespace Bank
         /// <param name="amount">Сумма пополнения</param>
         public void Deposit(decimal amount)
         {
-            Notify?.Invoke($"Попытка пополнить счет № {AccountNumber} на сумму: {amount:C2}.");
-
-            if (amount <= 0)
-            {
-                throw new ArgumentException("Сумма пополнения должна быть больше нуля!\n");
-            }
+            if (amount <= 0) return;
 
             AccountBalance += amount;
-            Notify?.Invoke($"На счет № {AccountNumber} поступило: {amount:C2}\nБаланс: {AccountBalance:C2}.\n");
         }
 
         /// <summary>
@@ -52,17 +44,19 @@ namespace Bank
         /// <param name="amount">Сумма списания</param>
         public void Withdraw(decimal amount)
         {
-            Notify?.Invoke($"Попытка снять со счета № {AccountNumber} сумму: {amount:C2}.");
-
             if (amount > AccountBalance)
             {
                 throw new ArgumentException($"Недостаточно средств для снятия!\nБаланс: {AccountBalance:C2}.\n");
             }
 
             AccountBalance -= amount;
-            Notify?.Invoke($"Со счета № {AccountNumber} снято: {amount:C2}\nОстаток: {AccountBalance:C2}.\n");
         }
 
+        /// <summary>
+        /// Перевод между счетами
+        /// </summary>
+        /// <param name="other">Счет снятия</param>
+        /// <param name="amount">Сумма перевода</param>
         public void Transfer(BankAccount other, decimal amount)
         {
             other.Withdraw(amount);

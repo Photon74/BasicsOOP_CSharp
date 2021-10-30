@@ -21,7 +21,7 @@ namespace Bank
             Console.WriteLine(bankAccount2);
             Console.WriteLine(bankAccount3);
 
-            bankAccount.Deposit(500);
+            bankAccount.Deposit(250);
             bankAccount1.Transfer(bankAccount, 200);
         }
     }
