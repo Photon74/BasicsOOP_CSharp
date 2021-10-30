@@ -16,15 +16,23 @@ namespace Bank
             BankAccount bankAccount2 = new(accountType: AccountType.Credit);
             BankAccount bankAccount3 = new(accountBalance: 358, accountType: AccountType.Deposit);
 
-            Console.WriteLine(bankAccount.ToString());
-            Console.WriteLine(bankAccount1.ToString());
-            Console.WriteLine(bankAccount2.ToString());
-            Console.WriteLine(bankAccount3.ToString());
+            Console.WriteLine(bankAccount);
+            Console.WriteLine(bankAccount1);
+            Console.WriteLine(bankAccount2);
+            Console.WriteLine(bankAccount3);
 
-            bankAccount.Deposit(0);
-            bankAccount.Deposit(100);
-            bankAccount.Withdraw(200);
-            bankAccount.Withdraw(50);
+
+            try
+            {
+                bankAccount.Deposit(0);
+                bankAccount.Deposit(100);
+                bankAccount.Withdraw(200);
+                bankAccount.Withdraw(50);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }
