@@ -63,6 +63,12 @@ namespace Bank
             Notify?.Invoke($"Со счета № {AccountNumber} снято: {amount:C2}\nОстаток: {AccountBalance:C2}.\n");
         }
 
+        public void Transfer(BankAccount other, decimal amount)
+        {
+            other.Withdraw(amount);
+            Deposit(amount);
+        }
+
         public override string ToString()
         {
             return $"Номер счета: {AccountNumber}\n" +

@@ -21,18 +21,8 @@ namespace Bank
             Console.WriteLine(bankAccount2);
             Console.WriteLine(bankAccount3);
 
-
-            try
-            {
-                bankAccount.Deposit(0);
-                bankAccount.Deposit(100);
-                bankAccount.Withdraw(200);
-                bankAccount.Withdraw(50);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
+            bankAccount.Deposit(500);
+            bankAccount1.Transfer(bankAccount, 200);
         }
     }
 }
