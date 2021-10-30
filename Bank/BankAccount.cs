@@ -1,4 +1,6 @@
-﻿namespace Bank
+﻿using System;
+
+namespace Bank
 {
     public delegate void AccountHandler(string message);
     class BankAccount
@@ -37,8 +39,7 @@
 
             if (amount <= 0)
             {
-                Notify?.Invoke($"Сумма пополнения должна быть больше нуля!\n");
-                return;
+                throw new ArgumentException("Сумма пополнения должна быть больше нуля!\n");
             }
 
             AccountBalance += amount;
@@ -55,8 +56,7 @@
 
             if (amount > AccountBalance)
             {
-                Notify?.Invoke($"Недостаточно средств для снятия!\nБаланс: {AccountBalance:C2}.\n");
-                return;
+                throw new ArgumentException($"Недостаточно средств для снятия!\nБаланс: {AccountBalance:C2}.\n");
             }
 
             AccountBalance -= amount;
