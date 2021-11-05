@@ -15,23 +15,23 @@ namespace BuildingTest
                 .Build();
 
             var building2 = Creator.GetBuilding()
-                .SetApartments(180)
+                .SetApartments(120)
                 .SetEntrances(5)
                 .SetFloors(9)
-                .SetHeight(23).AddBuildingToTable()
+                .SetHeight(27).AddBuildingToTable()
                 .Build();
 
             var building3 = Creator.GetBuilding()
-                .SetApartments(180)
+                .SetApartments(100)
                 .SetEntrances(5)
-                .SetFloors(9)
-                .SetHeight(23).AddBuildingToTable()
+                .SetFloors(5)
+                .SetHeight(13).AddBuildingToTable()
                 .Build();
 
             
-            //building1.SetApartments(5); // Ошибка
-
             Console.WriteLine(building1);
+            Console.WriteLine(building2);
+            Console.WriteLine(building3);
         }
     }
 }
