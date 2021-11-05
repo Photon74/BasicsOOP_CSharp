@@ -10,15 +10,9 @@ namespace LetsBuild
 
         private Creator() { }
 
-        public static Creator GetBuilding()
-        {
-            return new Creator();
-        }
+        public static Creator GetBuilding() => new Creator();
 
-        public Building Build()
-        {
-            return _building;
-        }
+        public Building Build() => _building;
 
         /// <summary>
         /// Кол-во квартир
