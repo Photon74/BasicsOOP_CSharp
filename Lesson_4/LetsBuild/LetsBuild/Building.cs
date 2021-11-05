@@ -22,25 +22,13 @@ namespace LetsBuild
         public int Apartments { get; internal set; }
         public int Entrances { get; internal set; }
 
-        internal void SetApartments(int apartments)
-        {
-            Apartments = apartments;
-        }
+        internal void SetApartments(int apartments) => Apartments = apartments;
 
-        internal void SetEntrances(int entrances)
-        {
-            Entrances = entrances;
-        }
+        internal void SetEntrances(int entrances) => Entrances = entrances;
 
-        internal void SetFloors(int floors)
-        {
-            Floors = floors;
-        }
+        internal void SetFloors(int floors) => Floors = floors;
 
-        internal void SetHeight(double height)
-        {
-            Height = height;
-        }
+        internal void SetHeight(double height) => Height = height;
 
         private double FloorHeight()
         {
