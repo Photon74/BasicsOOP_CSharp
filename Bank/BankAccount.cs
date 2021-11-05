@@ -2,7 +2,7 @@
 
 namespace Bank
 {
-    class BankAccount
+    internal class BankAccount
     {
         private static double Number;
 

@@ -3,9 +3,9 @@ using System.Text;
 
 namespace Bank
 {
-    class Program
+    internal class Program
     {
-        static void Main()
+        private static void Main()
         {
             Console.OutputEncoding = Encoding.UTF8; // Иначе вопросики выводил вместо знака рубля.
 

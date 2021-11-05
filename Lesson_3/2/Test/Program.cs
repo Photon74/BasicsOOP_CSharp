@@ -3,9 +3,9 @@ using System;
 
 namespace Test
 {
-    class MyClass
+    internal class MyClass
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             string s = "Hello world!";
             Console.WriteLine(s.ReverseString());

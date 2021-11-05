@@ -1,10 +1,8 @@
-﻿using System;
-
-namespace WorkingWithStrings
+﻿namespace WorkingWithStrings
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             var sourceFile = "test.txt";
             var destinationFile = "result.txt";

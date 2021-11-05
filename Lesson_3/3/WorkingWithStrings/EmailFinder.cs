@@ -3,7 +3,7 @@ using System.IO;
 
 namespace WorkingWithStrings
 {
-    class EmailFinder
+    internal class EmailFinder
     {
         /// <summary>
         /// Ищет в sourcePath адреса E-mail и записывает их в destPath
@@ -20,7 +20,7 @@ namespace WorkingWithStrings
 
                 while (!reader.EndOfStream)
                 {
-                    string str = reader.ReadLine();
+                    var str = reader.ReadLine();
                     SearchMail(ref str);
                     WriteFile(str, destPath);
                 }
