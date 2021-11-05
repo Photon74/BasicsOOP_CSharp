@@ -22,41 +22,21 @@ namespace LetsBuild
         public int Apartments { get; internal set; }
         public int Entrances { get; internal set; }
 
-        /// <summary>
-        /// Кол-во квартир
-        /// </summary>
-        /// <param name="apartments"></param>
-        /// <returns></returns>
         internal void SetApartments(int apartments)
         {
             Apartments = apartments;
         }
 
-        /// <summary>
-        /// Кол-во подъездов
-        /// </summary>
-        /// <param name="entrances"></param>
-        /// <returns></returns>
         internal void SetEntrances(int entrances)
         {
             Entrances = entrances;
         }
 
-        /// <summary>
-        /// Кол-во этажей
-        /// </summary>
-        /// <param name="floors"></param>
-        /// <returns></returns>
         internal void SetFloors(int floors)
         {
             Floors = floors;
         }
 
-        /// <summary>
-        /// Высота здания
-        /// </summary>
-        /// <param name="height"></param>
-        /// <returns></returns>
         internal void SetHeight(double height)
         {
             Height = height;
