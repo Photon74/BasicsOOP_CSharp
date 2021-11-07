@@ -1,14 +1,32 @@
-﻿namespace RationalNumbers
+﻿using System;
+
+namespace RationalNumbers
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Rationals rational1 = new(1, 3);
-            Rationals rational2 = new(1, 2);
-            Rationals rational3 = rational1 / rational2;
+            Rational rational1 = new(47, 34);
+            Rational rational2 = new(34, 86);
 
-            System.Console.WriteLine(rational3);
+            Console.WriteLine(rational1);
+            Console.WriteLine(rational2);
+            Console.WriteLine();
+            Console.WriteLine($"{rational1} + {rational2} = {rational1 + rational2}");
+            Console.WriteLine($"{rational1} - {rational2} = {rational1 - rational2}");
+            Console.WriteLine($"{rational1} * {rational2} = {rational1 * rational2}");
+            Console.WriteLine($"{rational1} / {rational2} = {rational1 / rational2}");
+            Console.WriteLine($"{rational1} % {rational2} = {rational1 % rational2}");
+            Console.WriteLine();
+            Console.WriteLine(rational1 + ".ToInt = " + (int)(rational1));
+            Console.WriteLine(rational1 + ".ToFloat = " + (float)(rational1));
+            Console.WriteLine();
+            Console.WriteLine(rational1 != rational2);
+            Console.WriteLine(rational1 == rational2);
+            Console.WriteLine(rational1 > rational2);
+            Console.WriteLine(rational1 < rational2);
+            Console.WriteLine(rational1 >= rational2);
+            Console.WriteLine(rational1 <= rational2);
         }
     }
 }
