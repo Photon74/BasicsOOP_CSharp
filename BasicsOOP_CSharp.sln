@@ -33,7 +33,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RationalNumbers", "Rational
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ComplexNumbers", "ComplexNumbers", "{6699F5D1-E932-4F1E-8C44-C8B0F0F494B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RationalNumbers", "Lesson_5\RationalNumbers\RationalNumbers.csproj", "{67D53DA6-C6F3-4D68-93CD-2D016196E3BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RationalNumbers", "Lesson_5\RationalNumbers\RationalNumbers.csproj", "{67D53DA6-C6F3-4D68-93CD-2D016196E3BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComplexNumbers", "Lesson_5\ComplexNumbers\ComplexNumbers.csproj", "{FC32A883-F4D3-4499-B64C-91ED4FD805E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{67D53DA6-C6F3-4D68-93CD-2D016196E3BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67D53DA6-C6F3-4D68-93CD-2D016196E3BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67D53DA6-C6F3-4D68-93CD-2D016196E3BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC32A883-F4D3-4499-B64C-91ED4FD805E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC32A883-F4D3-4499-B64C-91ED4FD805E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC32A883-F4D3-4499-B64C-91ED4FD805E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC32A883-F4D3-4499-B64C-91ED4FD805E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -87,6 +93,7 @@ Global
 		{9CD5D36B-89D2-4B3E-B7AA-25E3CE9782AD} = {4B0CC249-816D-41E5-87BA-590A02B00AAC}
 		{6699F5D1-E932-4F1E-8C44-C8B0F0F494B5} = {4B0CC249-816D-41E5-87BA-590A02B00AAC}
 		{67D53DA6-C6F3-4D68-93CD-2D016196E3BD} = {9CD5D36B-89D2-4B3E-B7AA-25E3CE9782AD}
+		{FC32A883-F4D3-4499-B64C-91ED4FD805E5} = {6699F5D1-E932-4F1E-8C44-C8B0F0F494B5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {52B46D77-7CB7-4A5A-8CF9-700C27DE664D}

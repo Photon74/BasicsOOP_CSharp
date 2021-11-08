@@ -2,12 +2,11 @@
 
 namespace RationalNumbers
 {
-    internal class Rational
+    public readonly struct Rational : IEquatable<Rational>
     {
-        private int _numerator;
-        private int _denominator;
+        private readonly int _numerator;
+        private readonly int _denominator;
 
-        public Rational() { }
         public Rational(int numerator, int denominator)
         {
             _numerator = numerator;
@@ -157,9 +156,9 @@ namespace RationalNumbers
         /// <returns></returns>
         private static int GCD(int first, int second)
         {
-            while(first != 0 && second != 0)
+            while (first != 0 && second != 0)
             {
-                if(first >= second)
+                if (first >= second)
                 {
                     first %= second;
                 }
@@ -175,13 +174,37 @@ namespace RationalNumbers
         private static bool TryToSimplify(Rational rational, out Rational result)
         {
             int gcd = GCD(Math.Abs(rational._numerator), rational._denominator);
-            result = rational;
+            result = new Rational(rational._numerator / gcd, rational._denominator / gcd);
 
-            if (rational._numerator == 0) return false;
+            if (rational._numerator == 0)
+            {
+                result = rational;
+                return false;
+            }
 
-            result._numerator /= gcd;
-            result._denominator /= gcd;
             return true;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Rational other && Equals(other);
+        }
+
+        public bool Equals(Rational other)
+        {
+            return _numerator == other._numerator &&
+                    _denominator == other._denominator;
+        }
+
+        public override int GetHashCode()
+        {
+            int hash = 1;
+            unchecked
+            {
+                hash = (hash * 397) ^ _numerator.GetHashCode();
+                hash = (hash * 397) ^ _denominator.GetHashCode();
+            }
+            return hash;
         }
     }
 }
