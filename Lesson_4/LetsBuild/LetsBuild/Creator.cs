@@ -4,15 +4,23 @@ namespace LetsBuild
 {
     public class Creator
     {
-        private Building _building = new Building();
+        private Building _building;
 
         public Dictionary<int, Building> BuildingsTable { get; set; } = new();
 
-        private Creator() { }
+        public Creator() { }
 
-        public static Creator GetBuilding() => new Creator();
+        public Creator GetBuilding()
+        {
+            _building = new Building();
+            return this;
+        }
 
-        public Building Build() => _building;
+        public Building Build()
+        {
+            BuildingsTable.Add(_building.Number, _building);
+            return _building;
+        }
 
         /// <summary>
         /// Кол-во квартир
@@ -64,12 +72,13 @@ namespace LetsBuild
             return this;
         }
 
-        public IEnumerable<string> PrintBuildingsTable()
+        public IEnumerable<string> GetBuildingsTable()
         {
             foreach (KeyValuePair<int, Building> pair in BuildingsTable)
             {
-                yield return pair.Key + " - " + pair.Value; ;
+                yield return pair.Key + " - " + pair.Value;
             }
+            yield return "";
         }
 
         public static implicit operator Building(Creator builder) => builder._building;
