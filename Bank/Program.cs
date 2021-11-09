@@ -9,18 +9,18 @@ namespace Bank
         {
             Console.OutputEncoding = Encoding.UTF8; // Иначе вопросики выводил вместо знака рубля.
 
-            BankAccount bankAccount = new();
-            BankAccount bankAccount1 = new(accountBalance: 500);
-            BankAccount bankAccount2 = new(accountType: AccountType.Credit);
-            BankAccount bankAccount3 = new(accountBalance: 358, accountType: AccountType.Deposit);
+            BankAccount bankAccount1 = new();
+            BankAccount bankAccount2 = new(accountBalance: 500);
+            BankAccount bankAccount3 = new(accountType: AccountType.Credit);
+            BankAccount bankAccount4 = new(accountBalance: 358, accountType: AccountType.Deposit);
 
-            Console.WriteLine(bankAccount);
             Console.WriteLine(bankAccount1);
             Console.WriteLine(bankAccount2);
             Console.WriteLine(bankAccount3);
+            Console.WriteLine(bankAccount4);
 
-            bankAccount.Deposit(250);
-            bankAccount1.Transfer(bankAccount, 200);
+            bankAccount1.Deposit(250);
+            bankAccount2.TransferFrom(bankAccount1, 200);
         }
     }
 }
