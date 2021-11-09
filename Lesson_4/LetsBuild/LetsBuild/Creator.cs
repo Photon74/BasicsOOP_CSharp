@@ -72,15 +72,15 @@ namespace LetsBuild
             return this;
         }
 
-        public IEnumerable<string> GetBuildingsTable()
+        public IEnumerable<Building> GetBuildingsTable()
         {
             foreach (KeyValuePair<int, Building> pair in BuildingsTable)
             {
-                yield return pair.Key + " - " + pair.Value;
+                yield return pair.Value;
             }
-            yield return "";
+            yield return null;
         }
 
-        public static implicit operator Building(Creator builder) => builder._building;
+        //public static implicit operator Building(Creator builder) => builder._building;
     }
 }

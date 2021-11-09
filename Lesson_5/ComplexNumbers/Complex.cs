@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ComplexNumbers
+﻿namespace ComplexNumbers
 {
     public readonly struct Complex
     {
@@ -13,10 +7,29 @@ namespace ComplexNumbers
 
         public Complex(double a, double b)
         {
-            this._a = a;
-            this._b = b;
+            _a = a;
+            _b = b;
         }
 
+        public static Complex operator +(Complex first, Complex second)
+        {
+            return new Complex(first._a + second._a, first._b + second._b);
+        }
 
+        public static Complex operator -(Complex first, Complex second)
+        {
+            return new Complex(first._a - second._a, first._b - second._b);
+        }
+
+        public static Complex operator *(Complex first, Complex second)
+        {
+            return new Complex(first._a * second._a - first._b * second._b,
+                                first._b * second._a + first._a * second._b);
+        }
+
+        public override string ToString()
+        {
+            return $"({_a}+{_b}i";
+        }
     }
 }

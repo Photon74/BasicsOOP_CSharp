@@ -18,7 +18,7 @@ namespace BuildingTest
 
             var building2 = builder.GetBuilding()
                 .SetApartments(120)
-                .SetEntrances(5)
+                .SetEntrances(4)
                 .SetFloors(9)
                 .SetHeight(27)
                 .Build();
@@ -30,8 +30,8 @@ namespace BuildingTest
                 .SetHeight(13)
                 .Build();
 
-            var a = builder.GetBuildingsTable();
-            foreach (var building in a) Console.WriteLine(building);
+            var list = builder.GetBuildingsTable();
+            foreach (var building in list) Console.WriteLine(building);
         }
     }
 }
