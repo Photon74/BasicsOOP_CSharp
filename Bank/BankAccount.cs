@@ -57,7 +57,7 @@ namespace Bank
         /// </summary>
         /// <param name="other">Счет снятия</param>
         /// <param name="amount">Сумма перевода</param>
-        public void Transfer(BankAccount other, decimal amount)
+        public void TransferFrom(BankAccount other, decimal amount)
         {
             other.Withdraw(amount);
             Deposit(amount);
