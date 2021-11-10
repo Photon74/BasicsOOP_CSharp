@@ -29,7 +29,7 @@
 
         public override string ToString()
         {
-            return $"({_a}+{_b}i";
+            return $"{_a}+{_b}i";
         }
     }
 }
