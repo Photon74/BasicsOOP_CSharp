@@ -10,11 +10,11 @@ namespace Figures
     {
         private double SideA{ get; set; }
         private double SideB { get; set; }
-        public Rectangle(Coordinates coordinates, Color color, bool visibility, double a, double b) 
+        public Rectangle(Coordinates coordinates, Color color, bool visibility, double sideA, double sideB) 
             : base(coordinates, color, visibility)
         {
-            SideA = a;
-            SideB = b;
+            SideA = sideA;
+            SideB = sideB;
         }
     }
 }
