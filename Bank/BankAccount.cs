@@ -3,9 +3,9 @@
 namespace Bank
 {
     public delegate void AccountHandler(string message);
-    class BankAccount
+    class BankAccount : IEquatable<BankAccount>
     {
-        public event AccountHandler Notify;
+        public static event AccountHandler Notify;
         private static double Number;
 
         public BankAccount()
@@ -25,9 +25,9 @@ namespace Bank
             AccountType = accountType;
         }
 
-        public double AccountNumber { get; set; }
+        public double AccountNumber { get; }
         public decimal AccountBalance { get; set; }
-        internal AccountType AccountType { get; set; }
+        internal AccountType AccountType { get; }
 
         /// <summary>
         /// Пополнение баланса
@@ -39,7 +39,7 @@ namespace Bank
 
             if (amount <= 0)
             {
-                throw new ArgumentException("Сумма пополнения должна быть больше нуля!\n");
+                throw new ArgumentException("Сумма пополнения должна быть больше нуля!");
             }
 
             AccountBalance += amount;
@@ -56,11 +56,22 @@ namespace Bank
 
             if (amount > AccountBalance)
             {
-                throw new ArgumentException($"Недостаточно средств для снятия!\nБаланс: {AccountBalance:C2}.\n");
+                throw new ArgumentException($"Недостаточно средств для снятия!\nБаланс: {AccountBalance:C2}.");
             }
 
             AccountBalance -= amount;
             Notify?.Invoke($"Со счета № {AccountNumber} снято: {amount:C2}\nОстаток: {AccountBalance:C2}.\n");
+        }
+
+        /// <summary>
+        /// Перевод между счетами
+        /// </summary>
+        /// <param name="other">Счет снятия</param>
+        /// <param name="amount">Сумма перевода</param>
+        public void TransferFrom(BankAccount other, decimal amount)
+        {
+            other.Withdraw(amount);
+            Deposit(amount);
         }
 
         public override string ToString()
@@ -69,5 +80,33 @@ namespace Bank
                 $"Баланс счета: {AccountBalance:C}\n" +
                 $"Тип счета: {AccountType}\n";
         }
+
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as BankAccount);
+        }
+
+        public bool Equals(BankAccount other)
+        {
+            return other != null &&
+                   AccountNumber == other.AccountNumber &&
+                   AccountBalance == other.AccountBalance &&
+                   AccountType == other.AccountType;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(AccountNumber, AccountBalance, AccountType);
+        }
+
+        public static bool operator ==(BankAccount account1, BankAccount account2) =>
+            account1.AccountNumber == account2.AccountNumber &&
+            account1.AccountBalance == account2.AccountBalance &&
+            account1.AccountType == account2.AccountType;
+
+        public static bool operator !=(BankAccount account1, BankAccount account2) =>
+            account1.AccountNumber != account2.AccountNumber ||
+            account1.AccountBalance != account2.AccountBalance ||
+            account1.AccountType != account2.AccountType;
     }
 }
