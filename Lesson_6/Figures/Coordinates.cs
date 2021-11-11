@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Figures
 {
-    internal struct Coordinates
+    public struct Coordinates
     {
         internal int X { get; set; }
         internal int Y { get; set; }

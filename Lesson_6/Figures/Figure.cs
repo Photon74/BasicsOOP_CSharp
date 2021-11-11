@@ -2,9 +2,9 @@
 {
     internal abstract class Figure
     {
-        internal Coordinates Coordinates { get; set; }
-        internal Color Color { get; set; }
-        internal bool Visibility { get; set; }
+        public Coordinates Coordinates { get; set; }
+        public Color Color { get; set; }
+        public bool Visibility { get; set; }
 
         public Figure(Coordinates coordinates, Color color, bool visibility)
         {
@@ -13,9 +13,9 @@
             Visibility = visibility;
         }
 
-        public Figure()
-        {
-        }
+        //public Figure()
+        //{
+        //}
 
         public Coordinates HorizontalMove() => new(Coordinates.X + 1, Coordinates.Y);
 

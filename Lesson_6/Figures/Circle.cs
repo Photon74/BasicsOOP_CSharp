@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Figures
 {
-    internal class Circle : Point
+    public class Circle : Point
     {
         private double Radius { get; set; }
         public double Square => Math.Round(Math.PI * Radius * Radius, 2);

@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Figures
 {
-    internal class Rectangle : Point
+    public class Rectangle : Point
     {
         private double SideA{ get; set; }
         private double SideB { get; set; }
+        public double Square => SideA * SideB;
         public Rectangle(Coordinates coordinates, Color color, bool visibility, double sideA, double sideB) 
             : base(coordinates, color, visibility)
         {
