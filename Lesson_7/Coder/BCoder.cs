@@ -8,6 +8,7 @@ namespace Coder
 {
     public class BCoder : ICoder
     {
+        const int k = 2111;
         public string Decode(string str)
         {
             throw new NotImplementedException();
@@ -15,7 +16,15 @@ namespace Coder
 
         public string Encode(string str)
         {
-            throw new NotImplementedException();
+            //var koof = ;
+            StringBuilder sb = new();
+            char[] s = str.ToCharArray();
+            for (int i = 0; i < s.Length; i++)
+            {
+                s[i] = (char)(s[i] + (k - (s[i] * 2)));
+                sb.Append(s[i]);
+            }
+            return sb.ToString()!;
         }
     }
 }

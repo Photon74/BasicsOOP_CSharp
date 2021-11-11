@@ -3,8 +3,13 @@ using Coder;
 
 Console.OutputEncoding = Encoding.UTF8;
 
-const string str = "A";
+const string str = "АБВГДЕЖЗИЙКЛМНОП   абвгдежзийклмноп";
 
 ICoder coder1 = new ACoder();
+ICoder coder2 = new BCoder();
 
-Console.WriteLine($"{str} -> {coder1.Encode(str)}"); // "BCD"
+var res1 = coder1.Encode(str);
+var res2 = coder2.Encode(str);
+
+Console.WriteLine($"{str} -> {res1}");
+Console.WriteLine($"{str} -> {res2}");

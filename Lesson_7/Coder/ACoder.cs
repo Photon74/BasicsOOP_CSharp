@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace Coder
 {
@@ -10,22 +6,26 @@ namespace Coder
     {
         public string Decode(string str)
         {
-            byte[] byteArray = Encoding.Default.GetBytes(str);
-            for (int i = 0; i < byteArray.Length; i++)
+            StringBuilder sb = new();
+            char[] s = str.ToCharArray();
+            for (int i = 0; i < s.Length; i++)
             {
-                byteArray[i] = (byte)(byteArray[i] - 1);
+                s[i] = (--s[i]);
+                sb.Append(s[i]);
             }
-            return Encoding.UTF8.GetString(byteArray);
+            return sb.ToString()!;
         }
 
         public string Encode(string str)
         {
-            byte[] byteArray = Encoding.Unicode.GetBytes(str);
-            for (int i = 0; i < byteArray.Length; i++)
+            StringBuilder sb = new();
+            char[] s = str.ToCharArray();
+            for (int i = 0; i < s.Length; i++)
             {
-                byteArray[i] = (byte)(byteArray[i] + 1);
+                s[i] = (++s[i]);
+                sb.Append(s[i]);
             }
-            return Encoding.Unicode.GetString(byteArray);
+            return sb.ToString()!;
         }
     }
 }
