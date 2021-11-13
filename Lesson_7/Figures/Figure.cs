@@ -8,10 +8,20 @@ namespace Figures
 {
     internal abstract class Figure
     {
-        private Color color;
-        private bool isVisible;
-        private (int x, int y) coordinates;
+        private Color _color;
+        private bool _isVisible;
+        private (int x, int y) _coordinates;
 
-        public abstract coordinates HorizontMove(int x, int y);
+        protected Figure(Color color, bool isVisible, (int x, int y) coordinates)
+        {
+            _color = color;
+            _isVisible = isVisible;
+            _coordinates = coordinates;
+        }
+
+        public abstract void HorizontallyMove(int x, int y);
+        public abstract void VerticallyMove(int x, int y);
+        public abstract void ChangeColor(Color color);
+        public abstract bool IsVisible();
     }
 }
