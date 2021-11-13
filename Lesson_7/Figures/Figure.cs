@@ -1,27 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Figures
+﻿namespace Figures
 {
-    internal abstract class Figure
+    public abstract class Figure
     {
         private Color _color;
         private bool _isVisible;
         private (int x, int y) _coordinates;
 
-        protected Figure(Color color, bool isVisible, (int x, int y) coordinates)
+        public Figure(Color color, bool isVisible, (int x, int y) coordinates)
         {
             _color = color;
             _isVisible = isVisible;
             _coordinates = coordinates;
         }
 
-        public abstract void HorizontallyMove(int x, int y);
-        public abstract void VerticallyMove(int x, int y);
-        public abstract void ChangeColor(Color color);
-        public abstract bool IsVisible();
+        public void HorizontallyMove() => _coordinates.y = _coordinates.y + 1;
+        public void VerticallyMove() => _coordinates.x = _coordinates.x + 1;
+        public void ChangeColor(Color color) => _color = color;
+        public bool IsVisible() => _isVisible;
+        public abstract double Square();
+
+        public override string ToString()
+        {
+            return $"Цвет: {_color}\n" +
+                $"Видимость: {_isVisible}\n" +
+                $"Координаты: {_coordinates}";
+        }
     }
 }
