@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Figures
 {
-    internal abstract class Point : Figure
+    public abstract class Point : Figure
     {
         public Point(Coordinates coordinates, Color color, bool visibility) 
             : base(coordinates, color, visibility)

@@ -9,6 +9,5 @@ var rectangle = new Rectangle(
     Color.Red,
     true,
     13, 31);
+rectangle.ChangeColor(Color.Silver);
 var r = rectangle.Square;
-
-Console.ReadLine();

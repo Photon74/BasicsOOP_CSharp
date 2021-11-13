@@ -1,6 +1,6 @@
 ﻿namespace Figures
 {
-    internal abstract class Figure
+    public abstract class Figure
     {
         public Coordinates Coordinates { get; set; }
         public Color Color { get; set; }
