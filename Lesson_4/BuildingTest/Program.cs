@@ -32,6 +32,10 @@ namespace BuildingTest
 
             var list = builder.GetBuildingsTable();
             foreach (var building in list) Console.WriteLine(building);
+
+            var a = from b in list
+                              where b.Floors > 5
+                              select b;
         }
     }
 }
